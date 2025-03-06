@@ -1,15 +1,26 @@
+
+
+
+
+
 const ctx = document.getElementById("pie");
 
-v1 = 1
-v2 = 2
-v3 = 3
-v4 = 4
-v5 = 5
-v6 = 6
-v7 = 7
-v8 = 8
-v9 = 9
-v10 = 10
+v1 = 2
+v2 = 1
+v3 = 2
+v4 = 3
+v5 = 4
+v6 = 5
+v7 = 6
+v8 = 7
+v9 = 8
+v10 = 9
+
+function changeNumber() {
+    v1++
+    Chart.update()
+    return v1
+}
 
 new Chart(ctx, {
     type: "line", data: {
@@ -24,4 +35,6 @@ new Chart(ctx, {
         }
     }
 });
+
+setInterval(changeNumber(), 1000)
 
