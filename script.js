@@ -31,9 +31,18 @@ let v21 = 0;
 
 
 const movingChart = new Chart(ctx, {
-  type: "bar", data: {
+  data: {
     labels: ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16", "p17", "p18", "p19", "p20", "p21"], 
     datasets: [{
+      type: "bar",
+      label: "vowels", 
+      data: [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21], 
+      borderWidth: 2,
+      borderColor: "blue",
+      cubicInterpolationMode: "monotone",
+      
+    },{
+      type: "line",
       label: "vowels", 
       data: [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21], 
       borderWidth: 2,
@@ -67,7 +76,7 @@ function profit() {
 
 function changeNumber() {
 
-  moveGraph = Math.round(Math.random() * 20 - 10) 
+  moveGraph = Math.round(Math.random() * 100 - 50) 
 
   // let whatYourNumberWillBe = yourNumber
 
@@ -102,13 +111,23 @@ function changeNumber() {
   v21 = moveGraph
   movingChart.data.datasets[0].data[0] = v1;
   movingChart.update();
+  movingChart.data.datasets[1].data[0] = v1;
+  movingChart.update();
   movingChart.data.datasets[0].data[1] = v2;
+  movingChart.update();
+  movingChart.data.datasets[1].data[1] = v2;
   movingChart.update();
   movingChart.data.datasets[0].data[2] = v3;
   movingChart.update();
+  movingChart.data.datasets[1].data[2] = v3;
+  movingChart.update();
   movingChart.data.datasets[0].data[3] = v4;
   movingChart.update();
+  movingChart.data.datasets[1].data[3] = v4;
+  movingChart.update();
   movingChart.data.datasets[0].data[4] = v5;
+  movingChart.update();
+  movingChart.data.datasets[1].data[4] = v5;
   movingChart.update();
   movingChart.data.datasets[0].data[5] = v6;
   movingChart.update();
