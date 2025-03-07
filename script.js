@@ -1,95 +1,155 @@
 const ctx = document.getElementById("pie");
 
-let v1 = 2
-let v2 = 1
-let v3 = 2
-let v4 = 3
-let v5 = 4
-let v6 = 5
-let v7 = 6
-let v8 = 7
-let v9 = 8
-let v10 = 9
+let yourNumber = 1
+
+let inStocks = false
+
+let moveGraph = 0
+
+let v1 = 0;
+let v2 = 0;
+let v3 = 0;
+let v4 = 0;
+let v5 = 0;
+let v6 = 0;
+let v7 = 0;
+let v8 = 0;
+let v9 = 0;
+let v10 = 0;
+let v11 = 0;
+let v12 = 0;
+let v13 = 0;
+let v14 = 0;
+let v15 = 0;
+let v16 = 0;
+let v17 = 0;
+let v18 = 0;
+let v19 = 0;
+let v20 = 0;
+let v21 = 0;
 
 
 
 const movingChart = new Chart(ctx, {
-    type: "line", data: {
-        labels: ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10"], datasets: [{
-            label: "vowels", data: [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10], borderWidth: 1
-        }]
-    }, options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-function changeNumber() {
-    v1++
-    v2++
-    movingChart.data.datasets[0].data[0] = v1
-    movingChart.update()
-    movingChart.data.datasets[1].data[1] = v2
-    movingChart.update()
-    movingChart.data.datasets[2].data[2] = v3
-    movingChart.update()
-    movingChart.data.datasets[3].data[3] = v4
-    movingChart.update()
-    movingChart.data.datasets[4].data[4] = v5
-    movingChart.update()
-    movingChart.data.datasets[5].data[5] = v6
-    movingChart.update()
-    return [v1, v2];
-}
-
-setInterval(changeNumber, 1000)
-
-/*
-
-const ctx = document.getElementById("pie");
-
-let v1 = 2; // Use let for variables that will change
-const v2 = 1; // Use const for variables that will not change
-const v3 = 2;
-const v4 = 3;
-const v5 = 4;
-const v6 = 5;
-const v7 = 6;
-const v8 = 7;
-const v9 = 8;
-const v10 = 9;
-
-// Store the chart instance
-const myChart = new Chart(ctx, {
-  type: "line",
-  data: {
-    labels: ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10"],
+  type: "bar", data: {
+    labels: ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13", "p14", "p15", "p16", "p17", "p18", "p19", "p20", "p21"], 
     datasets: [{
-      label: "vowels",
-      data: [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10],
-      borderWidth: 1
+      label: "vowels", 
+      data: [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21], 
+      borderWidth: 2,
+      borderColor: "blue",
+      cubicInterpolationMode: "monotone",
+      
     }]
-  },
-  options: {
+  }, options: {
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: false,
+        min: -10,
+        max: 10,
       }
-    }
+    }, animation: {
+      duration: 1000, // Set duration to 0 for instant updates
+      easing: 'linear' // Optional, but good to ensure linearity
+  }
   }
 });
 
-function changeNumber() {
-  v1++;  // Increment v1
-
-  // Update the chart data
-  myChart.data.datasets[0].data[0] = v1; // Update the first data point (v1)
-  myChart.update(); // Redraw the chart
-
-  return v1; // Return the updated value (optional)
+function invest() {
+let inStocks = true
+return inStocks
 }
 
-setInterval(changeNumber, 1000); // Pass the function itself, not the result of calling it*/
+function profit() {
+  let inStocks = false
+  return inStocks
+}
+
+function changeNumber() {
+
+  moveGraph = Math.round(Math.random() * 20 - 10) 
+
+  // let whatYourNumberWillBe = yourNumber
+
+  // whatYourNumberWillBe *= moveGraph
+
+  if (inStocks == true) {
+    yourNumber += moveGraph
+  } else {
+    yourNumber = yourNumber
+  }
+  
+  v1 = v2
+  v2 = v3
+  v3 = v4
+  v4 = v5
+  v5 = v6
+  v6 = v7
+  v7 = v8
+  v8 = v9
+  v9 = v10
+  v10 = v11
+  v11 = v12
+  v12 = v13
+  v13 = v14
+  v14 = v15
+  v15 = v16
+  v16 = v17
+  v17 = v18
+  v18 = v19
+  v19 = v20
+  v20 = v21
+  v21 = moveGraph
+  movingChart.data.datasets[0].data[0] = v1;
+  movingChart.update();
+  movingChart.data.datasets[0].data[1] = v2;
+  movingChart.update();
+  movingChart.data.datasets[0].data[2] = v3;
+  movingChart.update();
+  movingChart.data.datasets[0].data[3] = v4;
+  movingChart.update();
+  movingChart.data.datasets[0].data[4] = v5;
+  movingChart.update();
+  movingChart.data.datasets[0].data[5] = v6;
+  movingChart.update();
+  movingChart.data.datasets[0].data[6] = v7;
+  movingChart.update();
+  movingChart.data.datasets[0].data[7] = v8;
+  movingChart.update();
+  movingChart.data.datasets[0].data[8] = v9;
+  movingChart.update();
+  movingChart.data.datasets[0].data[9] = v10;
+  movingChart.update();
+  movingChart.data.datasets[0].data[10] = v11;
+  movingChart.update();
+  movingChart.data.datasets[0].data[11] = v12;
+  movingChart.update();
+  movingChart.data.datasets[0].data[12] = v13;
+  movingChart.update();
+  movingChart.data.datasets[0].data[13] = v14;
+  movingChart.update();
+  movingChart.data.datasets[0].data[14] = v15;
+  movingChart.update();
+  movingChart.data.datasets[0].data[15] = v16;
+  movingChart.update();
+  movingChart.data.datasets[0].data[16] = v17;
+  movingChart.update();
+  movingChart.data.datasets[0].data[17] = v18;
+  movingChart.update();
+  movingChart.data.datasets[0].data[18] = v19;
+  movingChart.update();
+  movingChart.data.datasets[0].data[19] = v20;
+  movingChart.update();
+  movingChart.data.datasets[0].data[20] = v21;
+  movingChart.update();
+
+
+
+  document.getElementById("current-value").textContent = moveGraph
+
+  document.getElementById("your-earnings").textContent = yourNumber
+
+  return [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, moveGraph, whatYourNumberWillBe, yourNumber];
+}
+
+setInterval(changeNumber, 100)
