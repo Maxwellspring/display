@@ -29,6 +29,7 @@ const movingChart = new Chart(ctx, {
 
 function changeNumber() {
     v1++
+    v2++
     movingChart.data.datasets[0].data[0] = v1
     movingChart.update()
     movingChart.data.datasets[1].data[1] = v2
@@ -41,7 +42,7 @@ function changeNumber() {
     movingChart.update()
     movingChart.data.datasets[5].data[5] = v6
     movingChart.update()
-    return v1;
+    return [v1, v2];
 }
 
 setInterval(changeNumber, 1000)
